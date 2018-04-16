@@ -1,0 +1,87 @@
+//
+// import stylesheets
+// --------------------
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+// @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+// @import "../../node_modules/bootstrap/dist/css/bootstrap-theme.css";
+
+//
+// geral
+// --------------------
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #F6F6F6;
+  --main-border-color: #111;
+  --button-bg-color: rgba(0, 0, 0, 0.5);
+  --button-text-color: #EEE;
+  --input-text-color: #333;
+  --button-clear-bg-color: #3572DB;
+  --button-equal-bg-color: #28D060;
+  --calcular-bg-color: #eee;
+}
+
+body {
+  background: var(--main-bg-color);
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.calculator {
+  border-radius: 4px;
+  border: solid 2px var(--main-border-color);
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.calculator-buttons button {
+  background: var(--button-bg-color);
+  border-radius: 4px;
+  /* border: solid 1px var(--main-border-color); */
+  color: var(--button-text-color);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 300;
+  padding: 20px;
+}
+
+.calculator input {
+  background: var(--calcular-bg-color);
+  background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(238,238,238,1) 100%);
+  background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%);
+  background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 );
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  border-bottom: solid 2px var(--main-border-color);
+  color: var(--input-text-color);
+  text-align: right;
+  font-size: 40px;
+  border-radius: 0;
+}
+
+.calculator-buttons {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.calculator-buttons .btn-ce,
+.calculator-buttons .btn-zero {
+  grid-column: span 3;
+}
+
+.calculator-buttons .btn-ce {
+  background-color: var(--button-clear-bg-color);
+}
+
+.calculator-buttons .btn-equal {
+  background-color: var(--button-equal-bg-color);
+}
