@@ -1,11 +1,14 @@
-# Calculator-Pure-Javascript
-
 <p align="center"><img src="calculator.png" alt="Calculator" width="200"></p>
 
+# Calculator-Pure-Javascript
+
+[![license](https://img.shields.io/github/license/LFeh/1500-translator.svg)](./license.md)
+
 This calculator I've done in the course [JavaScript Ninja](https://blog.da2k.com.br/curso-javascript-ninja/).
-I've decided to use **CSS Grid** and **Webpack** to pratice my skills with this tools.
+I've decided to use **CSS Grid** and **Webpack** to practice my skills with this tools.
 Fell free to use the code or add more features.
 
+[View project](https://www.felipefialho.com/1500-translator/)
 
 # Run project
 
