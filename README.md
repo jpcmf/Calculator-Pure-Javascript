@@ -4,7 +4,7 @@ This calculator I've done in the course [JavaScript Ninja](https://blog.da2k.com
 I've decided to use **CSS Grid** and **Webpack** to pratice my skills with this tools.
 Fell free to use the code or add more features.
 
-<p align="center"><img src="https://imgur.com/a/zcEmo" alt="Calculator"></p>
+<p align="center"><img src="calculator.png" alt="Calculator"></p>
 
 # Run project
 
@@ -28,9 +28,10 @@ npm run server
 ```
 npm run watch
 ```
-### Todos
+# Todos
 
  - Write MORE Tests
 
 # License
+
 MIT License © João Paulo C. M. Fricks
