@@ -7,8 +7,11 @@
   var $buttonCE = document.querySelector('[data-js="button-ce"]');
   var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
+  var numberVisor = $visor.value;
+
   function initialize() {
     initEvents();
+    clearVisor();
   }
 
   function initEvents() {
@@ -22,6 +25,12 @@
     $buttonEqual.addEventListener('click', handleClickEqual, false);
   }
 
+  function clearVisor() {
+    if(numberVisor == 0 && /^\d$/.test(numberVisor)) {
+      $visor.value = '';
+    }
+  }
+
   function handleClickNumber() {
     $visor.value += this.value;
   }
@@ -32,8 +41,9 @@
   }
 
   function handleClickCE() {
-    // $visor.value = 0;
-    $visor.value = '';
+    $visor.value = 0;
+    clearVisor();
+    // $visor.value = '';
   }
 
   function isLastItemAnOperation(number) {
@@ -73,6 +83,14 @@
     var operator = accumulated.split('').pop();
     var lastValue = removeLastItemIfItIsAnOperator(actual);
     var lastOperator = getLastOperator(actual);
+    // if(operator === 'x' || operator === '÷') {
+    //   alert('ok');
+    //   return calculatorOperations(operator, firstValue, lastValue) + lastOperator;
+    // }
+    // if(operator === 'x' || operator === '÷') {
+    //   alert('ok');
+    //   return calculatorOperations(operator, firstValue, lastValue) + lastOperator;
+    // }
     return calculatorOperations(operator, firstValue, lastValue) + lastOperator;
   }
 
