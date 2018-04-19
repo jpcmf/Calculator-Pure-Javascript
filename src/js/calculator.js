@@ -24,7 +24,6 @@
 
   function handleClickNumber(e) {
     $visor.value = $visor.value === '0' ? e.target.value : $visor.value + e.target.value;
-    // console.log(e.target.value, this.value);
   }
 
   function handleClickOperation(e) {
