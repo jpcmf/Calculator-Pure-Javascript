@@ -6,6 +6,7 @@
   var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
   var $buttonCE = document.querySelector('[data-js="button-ce"]');
   var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+  var shouldCleanVisor = false;
 
   function initialize() {
     initEvents();
@@ -23,12 +24,14 @@
   }
 
   function handleClickNumber(e) {
-    $visor.value = $visor.value === '0' ? e.target.value : $visor.value + e.target.value;
+    $visor.value = $visor.value === '0' || shouldCleanVisor === true ? e.target.value : $visor.value + e.target.value;
+    shouldCleanVisor = false;
   }
 
   function handleClickOperation(e) {
     $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-    $visor.value += e.target.value;
+    $visor.value = $visor.value + e.target.value;
+    shouldCleanVisor = false;
   }
 
   function handleClickCE() {
@@ -61,6 +64,7 @@
     // var allValues = $visor.value.match(/\d+[+x÷-]?/g);
     var allValues = $visor.value.match(getRegexOperations());
     $visor.value = allValues.reduce(calculateAllValues);
+    shouldCleanVisor = true;
   }
 
   function getRegexOperations() {
@@ -72,14 +76,6 @@
     var operator = accumulated.split('').pop();
     var lastValue = removeLastItemIfItIsAnOperator(actual);
     var lastOperator = getLastOperator(actual);
-    // if(operator === 'x' || operator === '÷') {
-    //   alert('ok');
-    //   return calculatorOperations(operator, firstValue, lastValue) + lastOperator;
-    // }
-    // if(operator === 'x' || operator === '÷') {
-    //   alert('ok');
-    //   return calculatorOperations(operator, firstValue, lastValue) + lastOperator;
-    // }
     return calculatorOperations(operator, firstValue, lastValue) + lastOperator;
   }
 
