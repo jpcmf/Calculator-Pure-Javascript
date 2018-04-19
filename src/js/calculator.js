@@ -11,7 +11,6 @@
 
   function initialize() {
     initEvents();
-    clearVisor();
   }
 
   function initEvents() {
@@ -42,8 +41,6 @@
 
   function handleClickCE() {
     $visor.value = 0;
-    clearVisor();
-    // $visor.value = '';
   }
 
   function isLastItemAnOperation(number) {
