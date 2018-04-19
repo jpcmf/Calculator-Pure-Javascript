@@ -22,13 +22,14 @@
     $buttonEqual.addEventListener('click', handleClickEqual, false);
   }
 
-  function handleClickNumber() {
-    $visor.value = $visor.value === '0' ? this.value : $visor.value + this.value;
+  function handleClickNumber(e) {
+    $visor.value = $visor.value === '0' ? e.target.value : $visor.value + e.target.value;
+    // console.log(e.target.value, this.value);
   }
 
-  function handleClickOperation() {
+  function handleClickOperation(e) {
     $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-    $visor.value += this.value;
+    $visor.value += e.target.value;
   }
 
   function handleClickCE() {
