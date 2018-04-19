@@ -7,8 +7,6 @@
   var $buttonCE = document.querySelector('[data-js="button-ce"]');
   var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-  var numberVisor = $visor.value;
-
   function initialize() {
     initEvents();
   }
@@ -24,14 +22,8 @@
     $buttonEqual.addEventListener('click', handleClickEqual, false);
   }
 
-  function clearVisor() {
-    if(numberVisor == 0 && /^\d$/.test(numberVisor)) {
-      $visor.value = '';
-    }
-  }
-
   function handleClickNumber() {
-    $visor.value += this.value;
+    $visor.value == 0 ? $visor.value = this.value : $visor.value += this.value;
   }
 
   function handleClickOperation() {
