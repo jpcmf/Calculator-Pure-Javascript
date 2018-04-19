@@ -23,7 +23,7 @@
   }
 
   function handleClickNumber() {
-    $visor.value === '0' ? $visor.value = this.value : $visor.value += this.value;
+    $visor.value = $visor.value === '0' ? this.value : $visor.value + this.value;
   }
 
   function handleClickOperation() {
